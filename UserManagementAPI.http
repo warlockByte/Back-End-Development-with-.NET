@@ -1,0 +1,40 @@
+@UserManagementAPI_HostAddress = http://localhost:5245
+@ApiToken = techhive-dev-token-change-me
+
+### List users
+GET {{UserManagementAPI_HostAddress}}/api/users
+Accept: application/json
+Authorization: Bearer {{ApiToken}}
+
+### Get one user
+GET {{UserManagementAPI_HostAddress}}/api/users/1
+Accept: application/json
+Authorization: Bearer {{ApiToken}}
+
+### Create a user
+POST {{UserManagementAPI_HostAddress}}/api/users
+Content-Type: application/json
+Authorization: Bearer {{ApiToken}}
+
+{
+  "firstName": "Ada",
+  "lastName": "Lovelace",
+  "email": "ada.lovelace@techhive.example",
+  "department": "Engineering"
+}
+
+### Update a user
+PUT {{UserManagementAPI_HostAddress}}/api/users/1
+Content-Type: application/json
+Authorization: Bearer {{ApiToken}}
+
+{
+  "firstName": "Ada",
+  "lastName": "Lovelace",
+  "email": "ada.lovelace@techhive.example",
+  "department": "Research"
+}
+
+### Delete a user
+DELETE {{UserManagementAPI_HostAddress}}/api/users/1
+Authorization: Bearer {{ApiToken}}
